@@ -1,17 +1,12 @@
 package com.co.hr.department.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class DepartmentDto {
+public class TempDepartmentDto {
 
 	private Long id;
 	private String deptName;
 	private String deptGroup;
 	private String useYn;
-
 }

@@ -3,16 +3,11 @@ package com.co.hr.department.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
+import com.co.hr.department.dto.DepartmentDto;
+import com.co.hr.department.dto.TempDepartmentDto;
 import com.co.hr.staff.entity.Staff;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,4 +31,9 @@ public class TempDepartment {
 	@OneToMany(mappedBy = "tempDepartment", cascade = CascadeType.ALL)
 	private List<Staff> tempStaffs = new ArrayList<>();
 
+	public TempDepartment(TempDepartmentDto e) {
+		this.setDeptName(e.getDeptName());
+		this.setDeptGroup(e.getDeptGroup());
+		this.setUseYn(e.getUseYn());
+	}
 }
